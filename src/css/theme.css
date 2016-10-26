@@ -5,8 +5,7 @@
 #banner {
     background-color: blue;
     color: white;
-    padding-bottom: 16px;
-    padding-top: 16px;
+    height: 60px;
     font-size: 32px;
     width: 100%;
 }
@@ -20,6 +19,67 @@
     left: 50px;
     top: 16px;
 }
+
+#menuIcon div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+#menuIcon {
+    height: 60px;
+}
+
+/*Dropdown Button ------------------------------------------------------------------*/
+#dropDown {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer
+}
+
+/* The container <div> - needed to position the dropdown content */
+#menuDropDown {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+}
+
+/*dropDown Content (hidden by default) */
+#dropDown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+#dropDown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+#dropDown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/*show the dropdown menu on hover */
+#menuDropDown:hover #dropDown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+#menuDropDown:hover #dropDown {
+    background-color: #3e8e41;
+}
+/*------------------------------------------------------------------------------------*/
 
 .user-info {
     position: fixed;
