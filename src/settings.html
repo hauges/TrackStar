@@ -4,20 +4,36 @@
 <head>
     <title>TrackStar - Settings</title>
     <link href="./css/theme.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Monoton" rel="stylesheet">
     <!--general layout-->
 </head>
 
 <body>
-    <div id="banner">
-        <p>
-            <span class="menu-button">Home</span>
-            <!--temporary, needs to be a dropdown-->
-            <span class="logo">TrackStar</span>
-            <!--temporary, will be an image-->
-            <span class="user-info">username</span>
-            <!--temporary, will change depending on user-->
-        </p>
+<div id="banner">
+    <div id="menuDropDown">
+        <button class="dropDownButton">
+            <div id="menuIcon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </button>
+        <div id="dropDown-content">
+            <a href="home.html" class="hvr-grow">Home</a>
+            <a href="playerList.html" class="hvr-grow">Player List</a>
+            <a href="teamList.html" class="hvr-grow">Team List</a>
+            <a href="search.html" class="hvr-grow">Search</a>
+        </div>
     </div>
+    <p>
+        <span class="menu-button">Login</span>
+        <!--temporary, needs to be a dropdown-->
+        <span class="logo">TrackStar</span>
+        <!--temporary, will be an image-->
+        <span class="user-info">username</span>
+        <!--temporary, will change depending on user-->
+    </p>
+</div>
     <div id="settings-div">
         <!--this will be used to add stats boxes-->
 
