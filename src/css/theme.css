@@ -2,6 +2,12 @@ body {
     margin: 0;
 }
 
+#menuDropDownLogin {
+    position: relative;
+    display: inline-block;
+    height: 80px;
+}
+
 #banner {
     background-color: #ff5c5c;
     color: white;
