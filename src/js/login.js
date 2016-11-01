@@ -1,5 +1,6 @@
 (function () {
     "use strict";
+    var apiUrl = "http://localhost:3000/"
     var username;
     var password;
 
@@ -11,10 +12,35 @@
             password = passwordField.value;
             usernameField.value = "";
             passwordField.value = "";
-            location.href = "home.html";
+            if(verify()) {
+                location.href = "home.html";
+            }
             sessionStorage.userName = username;
             console.log("username: " + username + "  password: " + password);
         }   
     }
+
+    function verify() {
+        var ret = false;
+        $.ajax({
+            url: apiUrl + "users/passwordFromUsername-" + username,
+            type: 'GET',
+            dataType: 'JSON',
+            async: false,
+            success: function (data) {
+                if(data) {
+                    ret = ( data == password);
+                    console.log(ret);
+                } else {
+                    console.log('user could not be found');
+                }
+            },
+            error: function (request, status, error) {
+                console.log(error, status, request);
+            }
+        });
+        return ret;
+    }
+
     window.onload = setup;
 })();
