@@ -77,7 +77,8 @@ router.route('/passwordFromUsername-:username') // gets password from a username
         });
     });
 
-router.route('/favoritesFromUsername-:username') // gets favorites from a username
+
+router.route('/favoritesFromUsername-:username') // gets password from a username
     .get(function (req, res, next) {
         mongoose.model('User').findOne({ 'username': req.params.username }, function (err, user) {
             if (err) {
