@@ -1,6 +1,7 @@
 (function () {
     "use strict";
-
+    var username = sessionStorage.getItem("userName");
+    console.log("session username: " + username);
     function setup() {
         var pageName = window.location.pathname;
         var indexOfName = pageName.indexOf("src") + 4;
@@ -32,7 +33,7 @@
             "<p>" +
             "<span class=\"menu-button\">" + pageName + "</span>" +
             "<span class=\"logo\">TrackStar</span>" +
-            "<span class=\"user-info\">username</span>" +
+            "<span class=\"user-info\">" + username + "</span>" +
             "</p>" +
             "</div>" +
             "<div id=\"player-div\">" +

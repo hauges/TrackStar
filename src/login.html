@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script language = "JavaScript" src = "js/login.js"></script>
 
 <head>
     <title>TrackStar - Login</title>
@@ -20,10 +21,10 @@
     <div id="login-div">
         <!--this will be used to add login boxes-->
         <h1>Login</h1>
-        <form>
-            <input type="text" name="username" value="" placeholder="Username"><br /><br />
-            <input type="password" name="psswd" value="" placeholder="Password"><br /><br />
-            <input type="submit" value="Login">
+        <form method = "post">
+            <input id = "username" type="text" name="username" value="" placeholder="Username"><br /><br />
+            <input id = "password" type="password" name="psswd" value="" placeholder="Password"><br /><br />
+            <input id = "submit" type="button" value="Login">
             <a href="./register.html">Register</a>
         </form>
     </div>
