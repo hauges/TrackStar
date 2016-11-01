@@ -1,20 +1,22 @@
 (function () {
     "use strict";
     var apiUrl = "http://localhost:3000/users/"
-    var username = "user" // this sould not be set here but this is meant for testing
+    var username = sessionStorage.getItem("userName");
+    //var username = "user" // this sould not be set here but this is meant for testing
     var user;
 
-    // make ajax call to update this contact
-    // this is temporary.  we will pass the user in by a session 
-    // for purposes of sprint 1
+    /**
+     * Gets the user based on the passed username
+     */
     function getUser() {
         $.ajax({
             url: apiUrl + "/username-" + username,
             type: 'GET',
             dataType: 'JSON',
+            async: false,
             success: function (data) {
                 if(data) {
-                    console.log(data);
+                    user = data[0];
                 } else {
                     console.log('user could not be found');
                 }
@@ -27,6 +29,18 @@
 
     $(document).ready(function () {
         getUser();
+        console.log(user);
+        pushFavs();
     });
+
+    function pushFavs() {
+        var $favDiv = $('#favorites');
+        console.log($favDiv);
+        var favs = user.favorites;
+        console.log(favs);
+        favs.forEach(function(element) {
+            $favDiv.append('<p>' + element + '</p>')
+        }, this);
+    }
 
 })();
