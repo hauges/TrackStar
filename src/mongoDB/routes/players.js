@@ -17,26 +17,57 @@ router.use(methodOverride(function (req, res) {
 router.route('/') // add code here
 
 // route middleware to validata :id
-router.param('id', function (req, res, next, id) {
-    mongoose.model('Players').findById(id, function (err, player) {
-        if (err || player === null) {
-            res.status(404);
-            err = new Error('Not Found');
-            err.status = 404;
-            res.format({
-                // html: function(){
-                //     next(err);
-                // },
-                json: function () {
-                    res.json({ message: err.status + ' ' + err });
-                }
-            });
-        } else {
-            // once validation is done, save new id in the req
-            req.id = id;
-            next();
-        }
+router.route('/')
+    .get(function (req, res, next) {
+        mongoose.model('Player').find({}, function (err, players) {
+            if (err) {
+                return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        res.json(players);
+                    }
+                });
+            }
+        });
+    })
+    .post(function (req, res) { // CONSIDER: can add a next parameter for next middleware to run in the middleware chain
+        mongoose.model('Player').create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            number: req.body.number,
+            team: req.body.team,
+            position:req.body.position,
+            height: req.body.height,
+            weight: req.body.weight,
+            //stats: { sport: String, statArray: [Number] }
+        }, function (err, players) {
+            if (err) {
+                res.send('Problem adding player to db.'); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        res.json(players);
+                    }
+                });
+            }
+        });
     });
-});
+
+router.route('/id-:id') // gets all data from a player
+    .get(function (req, res, next) {
+        mongoose.model('Player').find({ '_id': req.params.id }, function (err, players) {
+            if (err) {
+                return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        console.log(players);
+                        res.json(players);
+                    }
+                });
+            }
+        });
+    });
 
 module.exports = router;
