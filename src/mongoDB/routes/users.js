@@ -15,7 +15,6 @@ router.use(methodOverride(function (req, res) {
 
 router.route('/')
     .get(function (req, res, next) {
-        console.log('all');
         mongoose.model('User').find({}, function (err, users) {
             if (err) {
                 return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
@@ -47,10 +46,8 @@ router.route('/')
         });
     });
 
-router.route('/username-:username') // /username-<username>
+router.route('/username-:username') // gets all data from a username
     .get(function (req, res, next) {
-        console.log('found');
-        console.log(req.params.id);
         mongoose.model('User').find({ 'username': req.params.username }, function (err, user) {
             if (err) {
                 return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
@@ -59,6 +56,36 @@ router.route('/username-:username') // /username-<username>
                     json: function () {
                         console.log(user);
                         res.json(user);
+                    }
+                });
+            }
+        });
+    });
+
+router.route('/passwordFromUsername-:username') // gets password from a username
+    .get(function (req, res, next) {
+        mongoose.model('User').findOne({ 'username': req.params.username }, function (err, user) {
+            if (err) {
+                return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        res.json(user.password);
+                    }
+                });
+            }
+        });
+    });
+
+router.route('/favoritesFromUsername-:username') // gets password from a username
+    .get(function (req, res, next) {
+        mongoose.model('User').findOne({ 'username': req.params.username }, function (err, user) {
+            if (err) {
+                return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        res.json(user.favorites);
                     }
                 });
             }
