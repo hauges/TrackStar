@@ -62,6 +62,7 @@ router.route('/username-:username') // gets all data from a username
         });
     });
 
+// prolly dont need
 router.route('/passwordFromUsername-:username') // gets password from a username
     .get(function (req, res, next) {
         mongoose.model('User').findOne({ 'username': req.params.username }, function (err, user) {
@@ -77,8 +78,8 @@ router.route('/passwordFromUsername-:username') // gets password from a username
         });
     });
 
-
-router.route('/favoritesFromUsername-:username') // gets password from a username
+// prolly dont need
+router.route('/favoritesFromUsername-:username') // gets favorites from a username
     .get(function (req, res, next) {
         mongoose.model('User').findOne({ 'username': req.params.username }, function (err, user) {
             if (err) {
