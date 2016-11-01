@@ -54,16 +54,42 @@
         pushFavs();
     });
 
+    /**
+     * Pushes players into the div
+     */
     function pushFavs() {
-        var $favDiv = $('#favorites');
-        console.log($favDiv);
         var favs = user.favorites;
         console.log(favs);
         favs.forEach(function(element) {
             var player = getPlayer(element);
-            console.log(player);
-            $favDiv.append('<p>' + player.lastName + ", " + player.firstName + '</p>')
+            createTable(player);
         }, this);
+    }
+
+    function createTable(player) {
+        /*var properties = Object.keys(player);
+        for(var key in player) {
+            if(key != '_id' && key != '__v') {
+                $favDiv.append('<p><b>' + key + ':</b> ' + player[key] + '</p>');
+            }
+        }*/
+        var $favDiv = $('#favorites');
+        var tableString = 
+            '<table>' +
+                '<tr>' +
+                    '<td>' + player.lastName + ', ' + player.firstName + '</td>' +
+                    '<td>' + player.number + '</td>' +
+                    '<td>' + player.team + '</td>' +
+                '</tr>' + 
+                '<tr>' +
+                    '<td>' + player.position +
+                    '<td>' + player.height + '</td>' +
+                    '<td>' + player.weight + '</td>' +
+                '</tr>' + 
+            '</table>';
+        
+        $favDiv.append(tableString);
+        $favDiv.append('<br />');
     }
 
 })();

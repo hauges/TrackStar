@@ -10,7 +10,6 @@
             var passwordField = document.getElementById("password")
             username = usernameField.value;
             password = passwordField.value;
-            usernameField.value = "";
             passwordField.value = "";
             if(verify()) {
                 location.href = "home.html";
