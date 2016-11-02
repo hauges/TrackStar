@@ -38,7 +38,7 @@ router.route('/')
             team: req.body.team,
             position:req.body.position,
             height: req.body.height,
-            weight: req.body.weight,
+            weight: req.body.weight
             //stats: { sport: String, statArray: [Number] }
         }, function (err, players) {
             if (err) {
@@ -71,6 +71,22 @@ router.route('/id-:id') // gets all data from a player
         mongoose.model('Player').find({ '_id': req.params.id }, function (err, players) {
             if (err) {
                 return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        console.log(players);
+                        res.json(players);
+                    }
+                });
+            }
+        });
+    });
+
+router.route('/players-:name')
+    .get(function (req, res, next) {
+        mongoose.model('Player').find({ 'name': {$regex: req.params.name, $options: "i" } }, function(err, players) {
+            if (err){
+                return console.log(err);
             } else {
                 res.format({
                     json: function () {

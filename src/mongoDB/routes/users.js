@@ -32,7 +32,7 @@ router.route('/')
             username: req.body.username,
             password: req.body.password,
             email: req.body.email,
-            favorites: req.body.favorites,
+            favorites: req.body.favorites
         }, function (err, user) {
             if (err) {
                 res.send('Problem adding user to db.'); // CONSIDER: Might want to call next with error.  can add status code and error message.
