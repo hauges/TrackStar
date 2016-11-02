@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<script language="JavaScript" src="js/register.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <head>
     <title>TrackStar - Register</title>
@@ -10,21 +12,21 @@
 </head>
 
 <body>
-<div id="banner">
-    <div id="menuDropDownLogin"> </div>
-    <p>
-        <span class="logo">TrackStar</span>
-        <!--temporary, will be an image-->
-    </p>
-</div>
+    <div id="banner">
+        <div id="menuDropDownLogin"> </div>
+        <p>
+            <span class="logo">TrackStar</span>
+            <!--temporary, will be an image-->
+        </p>
+    </div>
     <div id="login-div">
         <!--this will be used to add register boxes-->
         <h1>Register</h1>
         <form>
-            <input type="text" name="username" value="" placeholder="Username"><br/><br/>
-            <input type="password" name="psswd" value="" placeholder="Password"><br/><br/>
-            <input type="password" name="psswd" value="" placeholder="Confirm Password"><br/><br />
-            <input type="submit" value="Register">
+            <input id="username" type="text" name="username" value="" placeholder="Username"><br/><br/>
+            <input id="password" type="password" name="psswd" value="" placeholder="Password"><br/><br/>
+            <input id="confirmPassword" type="password" name="psswd" value="" placeholder="Confirm Password"><br/><br />
+            <input id="submit" type="button" value="Register">
             <a href="./login.html">Login</a>
         </form>
     </div>
