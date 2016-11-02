@@ -13,7 +13,7 @@
             url: apiUrl + "users/username-" + username,
             type: 'GET',
             dataType: 'JSON',
-            async: true,
+            async: false,
             success: function (data) {
                 if(data) {
                     user = data[0];
