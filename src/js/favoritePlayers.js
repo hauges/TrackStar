@@ -27,6 +27,9 @@
         });
     }
 
+    /**
+     * Gets info on a givn player id
+     */
     function getPlayer(playerID) {
         var ret;
         $.ajax({
@@ -75,7 +78,7 @@
         }*/
         var $favDiv = $('#favorites');
         var tableString = 
-            '<table>' +
+            '<table class="player-table-short">' +
                 '<tr>' +
                     '<td>' + player.lastName + ', ' + player.firstName + '</td>' +
                     '<td>' + player.number + '</td>' +
