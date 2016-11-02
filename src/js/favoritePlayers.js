@@ -1,4 +1,4 @@
-(function () {
+
     "use strict";
     var apiUrl = "http://localhost:3000/"
     var username = sessionStorage.getItem("userName");
@@ -51,18 +51,11 @@
         return ret;
     }
 
-    $(document).ready(function () {
-        getUser();
-        console.log(user);
-        pushFavs();
-    });
-
     /**
      * Pushes players into the div
      */
     function pushFavs() {
         var favs = user.favorites;
-        console.log(favs);
         favs.forEach(function(element) {
             var player = getPlayer(element);
             createTable(player);
@@ -70,17 +63,12 @@
     }
 
     function createTable(player) {
-        /*var properties = Object.keys(player);
-        for(var key in player) {
-            if(key != '_id' && key != '__v') {
-                $favDiv.append('<p><b>' + key + ':</b> ' + player[key] + '</p>');
-            }
-        }*/
         var $favDiv = $('#favorites');
+        console.log($favDiv);
         var tableString = 
-            '<table class="player-table-short">' +
+            '<table class="player-table-short" id="' + player._id + '">' +
                 '<tr>' +
-                    '<td>' + player.lastName + ', ' + player.firstName + '</td>' +
+                    '<td>' + player.name + '</td>' +
                     '<td>' + player.number + '</td>' +
                     '<td>' + player.team + '</td>' +
                 '</tr>' + 
@@ -95,4 +83,6 @@
         $favDiv.append('<br />');
     }
 
-})();
+    getUser();
+    pushFavs();
+
