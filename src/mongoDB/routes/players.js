@@ -33,8 +33,7 @@ router.route('/')
     })
     .post(function (req, res) { // CONSIDER: can add a next parameter for next middleware to run in the middleware chain
         mongoose.model('Player').create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
+            name: req.body.name,
             number: req.body.number,
             team: req.body.team,
             position:req.body.position,
@@ -44,6 +43,19 @@ router.route('/')
         }, function (err, players) {
             if (err) {
                 res.send('Problem adding player to db.'); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        res.json(players);
+                    }
+                });
+            }
+        });
+    })
+    .delete(function (req, res, next) {
+        mongoose.model('Player').remove({}, function (err, players) {
+            if (err) {
+                return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
             } else {
                 res.format({
                     json: function () {
