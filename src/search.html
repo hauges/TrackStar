@@ -2,6 +2,7 @@
 <html>
 
  <script language="JavaScript" src="js/menuHTML.js"></script>
+ <link href="./css/search.css" type="text/css" rel="stylesheet">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <script language="JavaScript" src="js/search.js"></script>
 <div id = "menu"></div>
@@ -10,7 +11,7 @@
         <!--this will be used to add settings boxes-->
         <h1>Search</h1>
         <form>
-            <input type="text" name="search" id="search" placeholder="Name"><br /><br /> League:
+            <input type="text" name="search" placeholder="Player name..."><br /><br /> League:
             <br />
             <select>
                 <option value="MLB">MLB</option>
@@ -28,8 +29,8 @@
             <select>
                   <!--depends on league-->
                </select><br /><br />
-            <input type="submit" value="Search">
-            <input type="reset" value="Reset">
+            <button type="submit" value="Search">Search</button>
+            <button type="reset" value="Reset">Reset</button>
         </form>
     </div>
     <div id="search-results">

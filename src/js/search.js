@@ -5,16 +5,19 @@
     "use strict";
     var username = sessionStorage.getItem("userName");
     console.log("session username: " + username);
-    var searchString;
-    var players;
+    var apiUrl = "http://localhost:3000/";
+    $("[name='search']").on('input', search());
+
 
     function search() {
         console.log('searching');
+        var players = [];
         $.ajax({
-            url: apiUrl + "players/players-" + searchString,
+            url: apiUrl + "players/players-" + "Troy",
             type: 'GET',
             dataType: 'JSON',
             success: function (data) {
+                console.log(data);
                 if(data) {
                     players = data;
                 } else {
@@ -25,17 +28,17 @@
                 console.log(error, status, request);
             }
         });
-        displayResults();
+        displayResults(players);
     }
 
-    function displayResults() {
+    function displayResults(players) {
         var results = $('#search-results').empty();
         console.log(players);
     }
 
      function initializeSearch() {
          console.log('initializing');
-         searchString = $('#search').on('input', search);
+         
      //    add more initialization later...
      }
 

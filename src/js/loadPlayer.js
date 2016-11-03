@@ -1,5 +1,5 @@
 var playerID = sessionStorage.playerID;
-var apiUrl = "http://localhost:3000/"
+var apiUrl = "http://localhost:3000/";
 console.log(playerID);
 createTable(getPlayer(playerID));
 
