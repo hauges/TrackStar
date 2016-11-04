@@ -51,11 +51,24 @@ function displayResults(players) {
 
 // make an ajax call
 function addPlayer(playerId) {
-
+    var input = {'favorites' : playerId};
+    console.log(input);
+    $.ajax({
+        url: apiUrl + "users/addFav-" + username, // users/addFav-
+        type: 'PUT',
+        dataType: 'JSON',
+        data: input,
+        success: function () {
+                console.log('added');
+        },
+        error: function (request, status, error) {
+            console.log(error, status, request);
+        }
+    });
 }
 
     function initializeSearch() {
-        console.log('initializing');
+        console.log('initializing'); 
         
     //    add more initialization later...
     }
