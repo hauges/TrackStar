@@ -54,7 +54,7 @@ function addPlayer(playerId) {
     var input = {'favorites' : playerId};
     console.log(input);
     $.ajax({
-        url: apiUrl + "users/addFav-" + username, // users/addFav-
+        url: apiUrl + "users/favs-" + username, // users/addFav-
         type: 'PUT',
         dataType: 'JSON',
         data: input,

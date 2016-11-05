@@ -1,4 +1,6 @@
+
 var playerID = sessionStorage.playerID;
+var username = sessionStorage.getItem("userName");
 var apiUrl = "http://localhost:3000/";
 console.log(playerID);
 createTable(getPlayer(playerID));
@@ -27,22 +29,40 @@ function createTable(player) {
 
 //TODO this is also in favoritePlayers.js, should move these to common file
 function getPlayer(playerID) {
-        var ret;
-        $.ajax({
-            url: apiUrl + "players/id-" + playerID,
-            type: 'GET',
-            dataType: 'JSON',
-            async: false,
-            success: function (data) {
-                if(data) {
-                    ret = data[0];
-                } else {
-                    console.log('user could not be found');
-                }
-            },
-            error: function (request, status, error) {
-                console.log(error, status, request);
+    var ret;
+    $.ajax({
+        url: apiUrl + "players/id-" + playerID,
+        type: 'GET',
+        dataType: 'JSON',
+        async: false,
+        success: function (data) {
+            if(data) {
+                ret = data[0];
+            } else {
+                console.log('user could not be found');
             }
-        });
-        return ret;
-    }
+        },
+        error: function (request, status, error) {
+            console.log(error, status, request);
+        }
+    });
+    return ret;
+}
+
+function deletePlayer() {
+    $.ajax({
+        url: apiUrl + "users/favs-" + username,
+        type: 'DELETE',
+        dataType: 'JSON',
+        async: false, 
+        data: { "favorites" : playerID },
+        success: function () {
+            location.href = "home.html";
+        },
+        error: function (request, status, error) {
+            console.log(error, status, request);
+        }
+    });
+}
+
+$('#delete').on('click', deletePlayer);

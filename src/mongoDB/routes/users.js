@@ -94,7 +94,7 @@ router.route('/favoritesFromUsername-:username') // gets favorites from a userna
         });
     });
 
-router.route('/addFav-:username') // adds favorites to a user
+router.route('/favs-:username') // adds favorites to a user
     .put(function (req, res, next) {
         console.log(req.params);
         mongoose.model('User').update({ 'username': req.params.username },
@@ -110,6 +110,21 @@ router.route('/addFav-:username') // adds favorites to a user
             }
         });
     })
+    .delete(function (req, res, next) {
+        console.log(req.params);
+        mongoose.model('User').update({ 'username': req.params.username },
+                { $pullAll: { 'favorites' : [req.body.favorites] } },  function (err, user) {
+            if (err) {
+                return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        res.json([]);
+                    }
+                });
+            }
+        });
+    });
 
 router.route('/clearFav-:username') // adds favorites to a user
     .put(function (req, res, next) {
