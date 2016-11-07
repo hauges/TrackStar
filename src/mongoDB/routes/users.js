@@ -60,6 +60,26 @@ router.route('/username-:username') // gets all data from a username
                 });
             }
         });
+    })
+    .put(function (req, res, next) {
+        mongoose.model('User').findOne({ 'username': req.params.username }, function (err, user) {
+            user.username = req.body.username || user.username;
+            user.password = req.body.password || user.password;
+            user.email = req.body.email || user.email;
+            user.favorites = user.favorites;
+            user.save(function (err, person) {
+                if (err) {
+                    return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+                } else {
+                    res.format({
+                        json: function () {
+                            console.log(user);
+                            res.json(user);
+                        }
+                    });
+                }
+            })
+        });
     });
 
 // prolly dont need
