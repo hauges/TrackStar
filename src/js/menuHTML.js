@@ -28,7 +28,7 @@
             "<p>" +
             "<span class=\"menu-button\">" + pageName + "</span>" +
             "<span class=\"logo\">TrackStar</span>" +
-            "<span class=\"user-info\">" + username + "</span>" +
+            "<span class=\"user-info\">" + "<a href=\"settings.html\" class=\"hvr-grow\">" + username + "</a>" + "</span>" +
             "</p>" +
             "</div>" +
             "<div id=\"player-div\">" +
