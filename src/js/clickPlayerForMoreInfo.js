@@ -5,7 +5,7 @@ var user;
 
 getUser();
 
-var $tableList = $('table');
+var $tableList = $('span');
 
 $tableList.each(function(index) {
     $(this).click(function() {
