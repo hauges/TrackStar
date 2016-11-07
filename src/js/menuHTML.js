@@ -8,12 +8,7 @@
         var indexOfDot = pageName.indexOf(".");
         pageName = pageName.substr(indexOfName, indexOfDot - indexOfName);
         pageName = getPageName(pageName);
-        document.getElementById("menu").innerHTML = "<head>" +
-            "<title>TrackStar - " + pageName + "</title>" +
-            "<link href=\"./css/theme.css\" type=\"text/css\" rel=\"stylesheet\">" +
-            "<link href=\"https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Monoton\" rel=\"stylesheet\">" +
-            "</head>" +
-            "<body>" +
+        document.getElementById("menu").innerHTML = 
             "<div id=\"banner\">" +
             "<div id=\"menuDropDown\">" +
             "<button class=\"dropDownButton\">" +
@@ -33,12 +28,13 @@
             "<p>" +
             "<span class=\"menu-button\">" + pageName + "</span>" +
             "<span class=\"logo\">TrackStar</span>" +
-            "<span class=\"user-info\">" + username + "</span>" +
+            "<span class=\"user-info\">" + "<a href=\"settings.html\" class=\"hvr-grow\">" + username + "</a>" + "</span>" +
             "</p>" +
             "</div>" +
             "<div id=\"player-div\">" +
-            "</div>" +
-            "</body>";
+            "<link href=\"./css/theme.css\" type=\"text/css\" rel=\"stylesheet\">" +
+            "<link href=\"https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Monoton\" rel=\"stylesheet\">" +
+            "</div>";
     }
 
     function getPageName(pageTitle)
