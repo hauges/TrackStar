@@ -7,7 +7,7 @@ var username = sessionStorage.getItem("userName");
 console.log("session username: " + username);
 var apiUrl = "http://localhost:3000/";
 var searchString = '';
-var $searchResults = $('#search-results');
+var $searchResults = $('#searchResults');
 
 
 function search() {
@@ -37,12 +37,13 @@ function displayResults(players) {
     $searchResults.empty();
     players.forEach(function(player) {
         console.log(player.name);
-        var $listedPlayer = $('<p>');
+        var $listedPlayer = $('<li>');
         $listedPlayer.text(player.name);
         console.log($listedPlayer);
-        $listedPlayer.appendTo('#search-results');
+        $listedPlayer.appendTo('#searchResults');
         $listedPlayer.on('click', function() {
             var id = player._id;
+            $listedPlayer.addClass("added");
             console.log(id);
             addPlayer(id);
         })
@@ -79,5 +80,4 @@ searchBar.on('input', function() {
     searchString = searchBar.val();
     search();
 });
-
 

@@ -9,10 +9,50 @@ input[name=search] {
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
 }
 
-input[name=search]:focus {
-    width: 97%;
+
+#search-div {
+    text-align: center;
+    padding: 100px;
+    background-color: #2eb2ff;
+    width: 1000px;
+    margin: auto;
+    height: 40px;
+}
+
+#searchResults {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Bungee', cursive;
+    color: Black;
+}
+
+h1 {
+    font-family: 'Bungee', cursive;
+    color: Black;
+}
+
+li {
+    margin: auto;
+    width: 1152px;
+    cursor: pointer;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+li:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+li:hover {
+    background-color: #ddd;
+}
+
+.added {
+    background: #888;
+    color: #fff;
 }
