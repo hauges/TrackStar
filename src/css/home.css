@@ -1,0 +1,50 @@
+#favorites {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 100px;
+    max-width: 1800px;
+    margin: auto;
+}
+
+.player-table-short {
+    box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 440px;
+    margin: 20px;
+}
+
+.player-table-short:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.player-table-short img {
+    height: 300px;
+    width: 100%;
+
+}
+
+.statTable {
+    border-collapse: collapse;
+}
+.statTable * td {
+    width: 20%;
+    border: solid;
+    text-align: center;
+    border-color: #2eb2ff;
+    min-height: 0px;
+    height: 60px;
+}
+
+.statTable tr {
+    height: 50px;
+}
+
+.fields {
+    border-bottom: 1px solid #2eb2ff;
+    font-weight: bold;
+}

@@ -64,23 +64,27 @@
 
     function createTable(player) {
         var $favDiv = $('#favorites');
-        console.log($favDiv);
-        var tableString = 
-            '<table class="player-table-short" id="' + player._id + '">' +
+        var tableString =
+            '<span class="player-table-short" id="' + player._id + '">' +
+                '<img src="./images/TrackStarBallsRed.png" alt="player picture">' +
+            '<div>'+
+            '<table class="statTable">' +
                 '<tr>' +
-                    '<td>' + player.name + '</td>' +
-                    '<td>' + player.number + '</td>' +
-                    '<td>' + player.team + '</td>' +
+                    '<td>' + '<div class="fields">' + "Name" + '</div>' + player.name + '</td>' +
+                    '<td>' + '<div class="fields">' + "Number" + '</div>' + player.number + '</td>' +
+                    '<td>' + '<div class="fields">' + "Team" + '</div>' + player.team + '</td>' +
                 '</tr>' + 
                 '<tr>' +
-                    '<td>' + player.position +
-                    '<td>' + player.height + '</td>' +
-                    '<td>' + player.weight + '</td>' +
+                    '<td>' + '<div class="fields">' + "Pos" + '</div>' + player.position +
+                    '<td>' + '<div class="fields">' + "Height" + '</div>' + player.height + '</td>' +
+                    '<td>' + '<div class="fields">' + "Weight" + '</div>' + player.weight + '</td>' +
                 '</tr>' + 
-            '</table>';
+            '</table>' +
+        '</div>' +
+        '</span>';
         
         $favDiv.append(tableString);
-        $favDiv.append('<br />');
+       // $favDiv.append('<br />');
     }
 
     getUser();

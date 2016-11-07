@@ -9,9 +9,11 @@ body {
 }
 
 #banner {
-    background-color: #ff5c5c;
+    background-color: #ff5c50;
     color: white;
     height: 80px;
+    position: fixed;
+    top: 0px;
     font-size: 32px;
     width: 100%;
     font-family: 'Bungee', cursive;
@@ -133,16 +135,4 @@ body {
     top: 16px;
     right: 41.5%;
 
-}
-
-/* tables for preview of players */
-table.player-table-short {
-    border: 3px, solid, black;
-    border-collapse: collapse;
-    display: inline;
-}
-
-table.player-table-short td {
-    border: 3px solid black;
-    width: 150px;
 }
