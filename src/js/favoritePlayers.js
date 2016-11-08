@@ -79,8 +79,8 @@
                     '<td>' + '<div class="fields">' + "Team" + '</div>' + player.team + '</td>' +
                 '</tr>' + 
                 '<tr>' +
-                    getTopThreeStats(player);
-                '</tr>' + 
+                    getTopThreeStats(player) +
+                '</tr>' +
             '</table>' +
         '</div>' +
         '</span>';

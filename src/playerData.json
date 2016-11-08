@@ -13,4 +13,4 @@
 {"name":"Coco Crisp", "number": 4, "team": "Cleveland Indians", "position": "LF",  "height": "5-10", "weight": "185 lbs", "stats": {"sport": "baseballPOS", "statArray": [122, 446, 54, 103, 13, 55, 0.231, 0.302]}}
 {"name":"Aroldis Chapman", "number": 54, "team": "Chicago Cubs", "position": "RP", "height":"6-4", "weight": "212 lbs", "stats": {"sport": "baseballP", "statArray": [58.0, 90, 4, 1, 36, 1.55]}}
 {"name":"Julio Jones", "number": 11, "team": "Atlanta Falcons", "position": "WR", "height": "6-3", "weight": "220 lbs", "stats": {"sport": "footballWR", "statArray": [970, 19.0, 5]}}
-{"name":"T.Y. Hilton", "number": 13, "team": "Indianapolis Colts", "position": "WR", "height": "5-9", "weight": "180 lbs", "stats": { "sport": "footballWR", "statArray": [791, 15.2, 4]}}
+{"name":"T.Y. Hilton", "number": 13, "team": "Indianapolis Colts", "position": "WR", "height": "5-9", "weight": "180 lbs", "stats": {"sport": "footballWR", "statArray": [791, 15.2, 4]}}
