@@ -11,12 +11,13 @@ body {
 #banner {
     background-color: #ff5c50;
     color: white;
-    height: 80px;
     position: fixed;
+    display: block;
     top: 0px;
     font-size: 32px;
     width: 100%;
     font-family: 'Bungee', cursive;
+    height: 80px;
 }
 
 #banner p {
