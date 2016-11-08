@@ -9,24 +9,11 @@ createTable(getPlayer(playerID));
 function createTable(player) {
     var $favDiv = $('#stats-div');
     console.log($favDiv);
-    var bioString =
-        '<table class="player-table-short" id="' + player._id + '">' +
-        '<tr>' +
-        '<td>' + player.name + '</td>' +
-        '<td>' + player.number + '</td>' +
-        '<td>' + player.team + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td>' + player.position +
-        '<td>' + player.height + '</td>' +
-        '<td>' + player.weight + '</td>' +
-        '</tr>' +
-        '</table>';
-
+    var bioString = createBioTable(player);
     var statString = getStatLabels(player) + '<tr>';
 
 
-    for(var i = 0; i < player.stats.statArray.length; i++) {
+    for (var i = 0; i < player.stats.statArray.length; i++) {
         statString = statString + '<td>' + player.stats.statArray[i] + '</td>';
     }
 
@@ -39,10 +26,10 @@ function createTable(player) {
 
 function getStatLabels(player) {
     var ret = '<table class="player-table-long" id="' + player._id + '">';
-    switch(player.stats.sport) {
+    switch (player.stats.sport) {
         case 'basketball':
             ret = ret +
-                '<tr>' + 
+                '<tr>' +
                 '<td>PPG</td>' +
                 '<td>APG</td>' +
                 '<td>RPG</td>' +
@@ -62,6 +49,30 @@ function getStatLabels(player) {
     return ret;
 }
 
+function createBioTable(player) {
+    var $favDiv = $('#favorites');
+    var tableString =
+        '<span class="player-table-short" id="' + player._id + '">' +
+        '<img src="./images/TrackStarBallsRed.png" alt="player picture">' +
+        '<div>' +
+        '<table class="statTable">' +
+        '<tr>' +
+        '<td>' + '<div class="fields">' + "Name" + '</div>' + player.name + '</td>' +
+        '<td>' + '<div class="fields">' + "Number" + '</div>' + player.number + '</td>' +
+        '<td>' + '<div class="fields">' + "Team" + '</div>' + player.team + '</td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td>' + '<div class="fields">' + "Pos" + '</div>' + player.position +
+        '<td>' + '<div class="fields">' + "Height" + '</div>' + player.height + '</td>' +
+        '<td>' + '<div class="fields">' + "Weight" + '</div>' + player.weight + '</td>' +
+        '</tr>' +
+        '</table>' +
+        '</div>' +
+        '</span>';
+
+    return tableString;
+}
+
 //TODO this is also in favoritePlayers.js, should move these to common file
 function getPlayer(playerID) {
     var ret;
@@ -71,7 +82,7 @@ function getPlayer(playerID) {
         dataType: 'JSON',
         async: false,
         success: function (data) {
-            if(data) {
+            if (data) {
                 ret = data[0];
             } else {
                 console.log('user could not be found');
@@ -89,8 +100,8 @@ function deletePlayer() {
         url: apiUrl + "users/favs-" + username,
         type: 'DELETE',
         dataType: 'JSON',
-        async: false, 
-        data: { "favorites" : playerID },
+        async: false,
+        data: { "favorites": playerID },
         success: function () {
             location.href = "home.html";
         },

@@ -61,12 +61,12 @@
         }else {
             favs.forEach(function (element) {
                 var player = getPlayer(element);
-                createTable(player);
+                createSummaryTable(player);
             }, this);
         }
     }
 
-    function createTable(player) {
+    function createSummaryTable(player) {
         var $favDiv = $('#favorites');
         var tableString =
             '<span class="player-table-short" id="' + player._id + '">' +
@@ -75,13 +75,11 @@
             '<table class="statTable">' +
                 '<tr>' +
                     '<td>' + '<div class="fields">' + "Name" + '</div>' + player.name + '</td>' +
-                    '<td>' + '<div class="fields">' + "Number" + '</div>' + player.number + '</td>' +
+                    '<td>' + '<div class="fields">' + "Pos" + '</div>' + player.position + '</td>' +
                     '<td>' + '<div class="fields">' + "Team" + '</div>' + player.team + '</td>' +
                 '</tr>' + 
                 '<tr>' +
-                    '<td>' + '<div class="fields">' + "Pos" + '</div>' + player.position +
-                    '<td>' + '<div class="fields">' + "Height" + '</div>' + player.height + '</td>' +
-                    '<td>' + '<div class="fields">' + "Weight" + '</div>' + player.weight + '</td>' +
+                    getTopThreeStats(player);
                 '</tr>' + 
             '</table>' +
         '</div>' +
@@ -89,6 +87,20 @@
         
         $favDiv.append(tableString);
        // $favDiv.append('<br />');
+    }
+
+    function getTopThreeStats(player) {
+        var ret;
+    switch(player.stats.sport) {
+        case 'basketball':
+            ret = '<td>' + '<div class="fields">' + "PPG" + '</div>' + player.stats.statArray[0] +
+                    '<td>' + '<div class="fields">' + "APG" + '</div>' + player.stats.statArray[1] + '</td>' +
+                    '<td>' + '<div class="fields">' + "RPG" + '</div>' + player.stats.statArray[2] + '</td>'
+            break;
+        default:
+            return;
+    }
+    return ret;
     }
 
     getUser();
