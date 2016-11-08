@@ -10,3 +10,7 @@ var playerSchema  = new mongoose.Schema({
 });
 
 mongoose.model('Player', playerSchema);
+
+/*
+basketball: [ppg, apg, rpg, topg, bpg, spg, pfpg, mpg, fg%, 3p%, ft%]
+*/

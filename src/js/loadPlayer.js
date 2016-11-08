@@ -9,7 +9,7 @@ createTable(getPlayer(playerID));
 function createTable(player) {
     var $favDiv = $('#stats-div');
     console.log($favDiv);
-    var tableString =
+    var bioString =
         '<table class="player-table-short" id="' + player._id + '">' +
         '<tr>' +
         '<td>' + player.name + '</td>' +
@@ -23,8 +23,43 @@ function createTable(player) {
         '</tr>' +
         '</table>';
 
-    $favDiv.append(tableString);
+    var statString = getStatLabels(player) + '<tr>';
+
+
+    for(var i = 0; i < player.stats.statArray.length; i++) {
+        statString = statString + '<td>' + player.stats.statArray[i] + '</td>';
+    }
+
+    statString = statString + '</tr></table>';
+
+    $favDiv.append(bioString);
+    $favDiv.append(statString);
     $favDiv.append('<br />');
+}
+
+function getStatLabels(player) {
+    var ret = '<table class="player-table-long" id="' + player._id + '">';
+    switch(player.stats.sport) {
+        case 'basketball':
+            ret = ret +
+                '<tr>' + 
+                '<td>PPG</td>' +
+                '<td>APG</td>' +
+                '<td>RPG</td>' +
+                '<td>TOPG</td>' +
+                '<td>BPG</td>' +
+                '<td>SPG</td>' +
+                '<td>PFPG</td>' +
+                '<td>MPG</td>' +
+                '<td>FG%</td>' +
+                '<td>3P%</td>' +
+                '<td>FT%</td>' +
+                '</tr>'
+            break;
+        default:
+            return;
+    }
+    return ret;
 }
 
 //TODO this is also in favoritePlayers.js, should move these to common file

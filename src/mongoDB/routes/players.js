@@ -38,8 +38,8 @@ router.route('/')
             team: req.body.team,
             position:req.body.position,
             height: req.body.height,
-            weight: req.body.weight
-            //stats: { sport: String, statArray: [Number] }
+            weight: req.body.weight,
+            stats: req.body.stats
         }, function (err, players) {
             if (err) {
                 res.send('Problem adding player to db.'); // CONSIDER: Might want to call next with error.  can add status code and error message.
