@@ -44,6 +44,7 @@ function displayResults(players) {
         $listedPlayer.on('click', function() {
             var id = player._id;
             $listedPlayer.addClass("added");
+            //add checked logo here
             console.log(id);
             addPlayer(id);
         })

@@ -26,12 +26,12 @@ input[name=search] {
     padding: 0;
     margin: 0;
     font-family: 'Bungee', cursive;
-    color: Black;
+    color: #ff5c50;
 }
 
 h1 {
     font-family: 'Bungee', cursive;
-    color: Black;
+    color: white;
 }
 
 li {
@@ -44,15 +44,11 @@ li {
     transition: 0.2s;
 }
 
-li:nth-child(odd) {
-    background-color: #f9f9f9;
-}
-
 li:hover {
     background-color: #ddd;
 }
 
 .added {
-    background: #888;
+    background-color: #888;
     color: #fff;
 }
