@@ -14,7 +14,7 @@ router.use(methodOverride(function (req, res) {
 }));
 
 // READY to build our API
-router.route('/') // add code here
+//router.route('/') // add code here
 
 // route middleware to validata :id
 router.route('/')
