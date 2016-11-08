@@ -3,7 +3,7 @@
     var username = sessionStorage.getItem("userName");
     console.log("session username: " + username);
     function setup() {
-        var pageName = window.location.pathname;
+        var pageName = window.location.pathname; //
         var indexOfName = pageName.indexOf("src") + 4;
         var indexOfDot = pageName.indexOf(".");
         pageName = pageName.substr(indexOfName, indexOfDot - indexOfName);
@@ -42,15 +42,17 @@
         switch (pageTitle)
         {
             case "playerList":
-                return "Players";
+                return '<a href="./playerList.html">Players</a>';
             case "home":
-                return "Home";
+                return '<a href="./home.html">Home</a>';
             case "teamList":
-                return "Teams";
+                return '<a href="./teamList.html">Teams</a>';
             case "search":
-                return "Search";
+                return '<a href="./search.html">Search</a>';
             case "settings":
-                return "Settings";
+                return '<a href="./settings.html">Settings</a>';
+            case "stats":
+                return '<a href="./home.html">home</a>' + ' -> ' + '<a href="./stats.html">Stats</a>';
             default:
                 return "support not added yet";
         }

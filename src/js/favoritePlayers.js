@@ -56,7 +56,6 @@
      */
     function pushFavs() {
         var favs = user.favorites;
-        console.log(favs);
         if(favs.length <= 0){
             $('#favorites').append('<p id="noFavs"> You are not currently following any players. </br> To follow a player, navigate to the search page, or </br><a href="./search.html">click here</a> </p>');
         }else {
