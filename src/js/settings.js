@@ -62,6 +62,11 @@
         }
     }
 
+    $('#logout').on('click', function() {
+        sessionStorage.userName = null;
+        location.href = "login.html";
+    })
+
     function verify() {
         var ret = false;
         $.ajax({
