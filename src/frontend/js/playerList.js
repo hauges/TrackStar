@@ -42,6 +42,7 @@ function getPlayer(playerID) {
         async: false,
         success: function (data) {
             if(data) {
+                console.log("Player data: " +data[0]);
                 ret = data[0];
             } else {
                 console.log('user could not be found');
@@ -58,10 +59,10 @@ function getPlayer(playerID) {
  * Pushes players into the div
  */
 function pushFavs() {
-    console.log(user.favorites);
+    console.log("favorites: "+user.favorites);
     var favs = user.favorites;
     if(favs.length <= 0){
-        $('#allFavs').append('<p id="noFavs"> You are not currently following any players. </br> To follow a player, navigate to the search page, or </br><a href="./search.html">click here</a> </p>');
+        $('#allFavs').append('<p id="noFavs"> You are not currently following any players. </br> To follow a player, navigate to the search page, or </br><a href="./search.html">click here</a> </p>').addId("noFavs");
     }else {
         favs.forEach(function (element) {
             var player = getPlayer(element);

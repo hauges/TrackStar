@@ -6,3 +6,23 @@
 .favs {
     font-family: 'Bungee', cursive;
 }
+
+#noFavs {
+    margin: auto;
+    padding-top: 200px;
+    vertical-align: center;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    font-size: 40pt;
+    color: #cccccc;
+}
+
+#noFavs a {
+    margin: auto;
+    padding-top: 200px;
+    vertical-align: center;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    font-size: 40pt;
+    color: #2eb2ff;
+}
