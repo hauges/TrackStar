@@ -95,7 +95,32 @@
         case 'basketball':
             ret = '<td>' + '<div class="fields">' + "PPG" + '</div>' + player.stats.statArray[0] +
                     '<td>' + '<div class="fields">' + "APG" + '</div>' + player.stats.statArray[1] + '</td>' +
-                    '<td>' + '<div class="fields">' + "RPG" + '</div>' + player.stats.statArray[2] + '</td>'
+                    '<td>' + '<div class="fields">' + "RPG" + '</div>' + player.stats.statArray[2] + '</td>';
+            break;
+        case 'footballQB':
+            ret = '<td>' + '<div class="fields">' + "Yards" + '</div>' + player.stats.statArray[0] +
+                    '<td>' + '<div class="fields">' + "TD" + '</div>' + player.stats.statArray[1] + '</td>' +
+                    '<td>' + '<div class="fields">' + "QBR" + '</div>' + player.stats.statArray[2] + '</td>';
+            break;
+        case 'footballRB':
+            ret = '<td>' + '<div class="fields">' + "Yards" + '</div>' + player.stats.statArray[0] +
+                    '<td>' + '<div class="fields">' + "Average" + '</div>' + player.stats.statArray[1] + '</td>' +
+                    '<td>' + '<div class="fields">' + "TD" + '</div>' + player.stats.statArray[2] + '</td>';
+            break;
+        case 'baseballPOS':
+            ret = '<td>' + '<div class="fields">' + "AB" + '</div>' + player.stats.statArray[0] +
+                    '<td>' + '<div class="fields">' + "Hits" + '</div>' + player.stats.statArray[1] + '</td>' +
+                    '<td>' + '<div class="fields">' + "Average" + '</div>' + player.stats.statArray[2] + '</td>';
+            break;
+        case 'baseballP':
+            ret = '<td>' + '<div class="fields">' + "W" + '</div>' + player.stats.statArray[0] +
+                    '<td>' + '<div class="fields">' + "Saves" + '</div>' + player.stats.statArray[1] + '</td>' +
+                    '<td>' + '<div class="fields">' + "ERA" + '</div>' + player.stats.statArray[2] + '</td>';
+            break;
+        case 'footballWR':
+            ret = '<td>' + '<div class="fields">' + "Yards" + '</div>' + player.stats.statArray[0] +
+                    '<td>' + '<div class="fields">' + "Avg Yards" + '</div>' + player.stats.statArray[1] + '</td>' +
+                    '<td>' + '<div class="fields">' + "TD" + '</div>' + player.stats.statArray[2] + '</td>';
             break;
         default:
             return;

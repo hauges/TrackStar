@@ -41,7 +41,58 @@ function getStatLabels(player) {
                 '<td>FG%</td>' +
                 '<td>3P%</td>' +
                 '<td>FT%</td>' +
-                '</tr>'
+                '</tr>';
+            break;
+        case 'footballQB':
+            ret = ret +
+                '<tr>' +
+                '<td>Yards</td>' +
+                '<td>Completion %</td>' +
+                '<td>Int</td>' +
+                '<td>TD</td>' +
+                '<td>QBR</td>' +
+                '</tr>';
+            break;
+        case 'footballRB':
+            ret = ret +
+                '<tr>' +
+                '<td>Yards</td>' +
+                '<td>Average</td>' +
+                '<td>TD</td>' +
+                '<td>First Downs</td>' +
+                '</tr>';
+            break;
+        case 'baseballPOS':
+            ret = ret +
+                '<tr>' +
+                '<td>GP</td>' +
+                '<td>AB</td>' +
+                '<td>Runs</td>' +
+                '<td>Hits</td>' +
+                '<td>HR</td>' +
+                '<td>RBI</td>' +
+                '<td>AVG</td>' +
+                '<td>OBP</td>' +
+                '</tr>';
+            break;
+        case 'baseballP':
+            ret = ret +
+                '<tr>' +
+                '<td>IP</td>' +
+                '<td>SO</td>' +
+                '<td>W</td>' +
+                '<td>L</td>' +
+                '<td>Save</td>' +
+                '<td>ERA</td>' +
+                '</tr>';
+            break;
+        case 'footballWR':
+            ret = ret +
+                '<tr>' +
+                '<td>Yards</td>' +
+                '<td>Avg Yards</td>' +
+                '<td>TD</td>' +
+                '</tr>';
             break;
         default:
             return;
