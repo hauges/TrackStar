@@ -1,0 +1,14 @@
+.player-table-long {
+    border-collapse: collapse;
+}
+
+.player-table-long tr {
+    height: 50px;
+}
+
+.player-table-long td {
+    width: 75px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
