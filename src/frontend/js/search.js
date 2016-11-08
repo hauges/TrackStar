@@ -46,7 +46,37 @@ function displayResults(players) {
             $listedPlayer.addClass("added");
             //add checked logo here
             console.log(id);
-            addPlayer(id);
+            //verify player is not already added
+            var alreadyAdded = false;
+             $.ajax({
+            url: apiUrl + "users/favoritesFromUsername-" + username,
+            type: 'GET',
+            dataType: 'JSON',
+            async: false,
+            success: function (data) {
+                if(data) {
+                    console.log("Data: "  + data);
+                    for (var x = 0; x < data.length; x++) {
+                        if (data[x] == id) {
+                            alreadyAdded = true;
+                            return;
+                        }
+                    }
+                } else {
+                    console.log('user could not be found');
+                }
+            },
+            error: function (request, status, error) {
+                console.log(error, status, request);
+            }
+        });
+        if (!alreadyAdded) 
+        {
+            addPlayer(id)
+        }
+
+
+            //addPlayer(id);
         })
     }, this);
 }
