@@ -56,10 +56,15 @@
      */
     function pushFavs() {
         var favs = user.favorites;
-        favs.forEach(function(element) {
-            var player = getPlayer(element);
-            createTable(player);
-        }, this);
+        console.log(favs);
+        if(favs.length <= 0){
+            $('#favorites').append('<p id="noFavs"> You are not currently following any players. </br> To follow a player, navigate to the search page, or </br><a href="./search.html">click here</a> </p>');
+        }else {
+            favs.forEach(function (element) {
+                var player = getPlayer(element);
+                createTable(player);
+            }, this);
+        }
     }
 
     function createTable(player) {
