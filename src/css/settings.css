@@ -1,0 +1,8 @@
+#change-username-div,  #change-password-div{
+    background: #2eb2ff;
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    padding: 10px;
+}

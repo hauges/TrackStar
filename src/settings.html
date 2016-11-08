@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
+    <title>TrackStar - Settings</title>
     <script language="JavaScript" src="js/checkSession.js"></script>
     <script language="JavaScript" src="js/menuHTML.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="./css/settings.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Monoton" rel="stylesheet">
 </head>
 
 <body>
     <div id="menu"></div>
-    <form>
-        <input type="text" name="username" placeholder=""><br /><br />
-        <button type="submit" value="Confirm">Confirm</button>
-    </form>
+    <div id="change-username-div">
+        <h1>Change Username</h1>
+        <form>
+            <input id="oldPasswordUsername" type="password" name="oldPasswordU" value="" placeholder="Current Password"><br/><br/>
+            <input id="username" type="text" name="username" value="" placeholder="New Username"><br/><br/>
+            <input id="usernameComfirm" type="text" name="usernameC" value="" placeholder="Confirm New Username"><br/><br/>
+            <input id="submit-username" type="button" value="Change Username">
+        </form>
+    </div>
+
+    <div id="change-password-div">
+        <h1>Change Password</h1>
+        <form>
+            <input id="oldPassword" type="password" name="oldPassword" value="" placeholder="Old Password"><br/><br/>
+            <input id="password" type="password" name="password" value="" placeholder="New Password"><br/><br/>
+            <input id="passwordComfirm" type="password" name="passwordC" value="" placeholder="Confirm New Password"><br/><br/>
+            <input id="submit-password" type="button" value="Change Password">
+        </form>
+    </div>
 </body>
+<script language="JavaScript" src="js/settings.js"></script>
 
 </html>
