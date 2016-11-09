@@ -1,6 +1,15 @@
-#allFavs {
+#baseball {
     margin: auto;
     margin-top: 100px;
+}
+
+#football, #basketball, #baseball{
+    padding: 10px;
+    padding-left: 40px;
+}
+
+h1 {
+    text-align: center;
 }
 
 .favs {
