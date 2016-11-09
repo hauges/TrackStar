@@ -33,6 +33,7 @@ router.route('/')
     })
     .post(function (req, res) { // CONSIDER: can add a next parameter for next middleware to run in the middleware chain
         mongoose.model('Player').create({
+            picture: req.body.picture,
             name: req.body.name,
             number: req.body.number,
             team: req.body.team,

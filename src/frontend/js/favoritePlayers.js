@@ -68,9 +68,10 @@
 
     function createSummaryTable(player) {
         var $favDiv = $('#favorites');
+        var picPath = "./pictures/" + player.picture;
         var tableString =
             '<span class="player-table-short" id="' + player._id + '">' +
-                '<img src="./images/TrackStarBallsRed.png" alt="player picture">' +
+                '<img src="' + picPath + '">' +
             '<div>'+
             '<table class="statTable">' +
                 '<tr>' +
