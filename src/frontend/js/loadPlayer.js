@@ -29,70 +29,82 @@ function getStatLabels(player) {
     switch (player.stats.sport) {
         case 'basketball':
             ret = ret +
+                '<thead>' +
                 '<tr>' +
-                '<td>PPG</td>' +
-                '<td>APG</td>' +
-                '<td>RPG</td>' +
-                '<td>TOPG</td>' +
-                '<td>BPG</td>' +
-                '<td>SPG</td>' +
-                '<td>PFPG</td>' +
-                '<td>MPG</td>' +
-                '<td>FG%</td>' +
-                '<td>3P%</td>' +
-                '<td>FT%</td>' +
-                '</tr>';
+                '<th>PPG</th>' +
+                '<th>APG</th>' +
+                '<th>RPG</th>' +
+                '<th>TOPG</th>' +
+                '<th>BPG</th>' +
+                '<th>SPG</th>' +
+                '<th>PFPG</th>' +
+                '<th>MPG</th>' +
+                '<th>FG%</th>' +
+                '<th>3P%</th>' +
+                '<th>FT%</th>' +
+                '</tr>' +
+                '</thead>';
             break;
         case 'footballQB':
             ret = ret +
+                '<thead>' +
                 '<tr>' +
-                '<td>Yards</td>' +
-                '<td>Completion %</td>' +
-                '<td>Int</td>' +
-                '<td>TD</td>' +
-                '<td>QBR</td>' +
-                '</tr>';
+                '<th>Yards</th>' +
+                '<th>Completion %</th>' +
+                '<th>Int</th>' +
+                '<th>TD</th>' +
+                '<th>QBR</th>' +
+                '</tr>' +
+                '</thead>';
             break;
         case 'footballRB':
             ret = ret +
+                '<thead>' +
                 '<tr>' +
-                '<td>Yards</td>' +
-                '<td>Average</td>' +
-                '<td>TD</td>' +
-                '<td>First Downs</td>' +
-                '</tr>';
+                '<th>Yards</th>' +
+                '<th>Average</th>' +
+                '<th>TD</th>' +
+                '<th>First Downs</th>' +
+                '</tr>' +
+                '</thead>';
             break;
         case 'baseballPOS':
             ret = ret +
+                '<thead>' +
                 '<tr>' +
-                '<td>GP</td>' +
-                '<td>AB</td>' +
-                '<td>Runs</td>' +
-                '<td>Hits</td>' +
-                '<td>HR</td>' +
-                '<td>RBI</td>' +
-                '<td>AVG</td>' +
-                '<td>OBP</td>' +
-                '</tr>';
+                '<th>GP</th>' +
+                '<th>AB</th>' +
+                '<th>Runs</th>' +
+                '<th>Hits</th>' +
+                '<th>HR</th>' +
+                '<th>RBI</th>' +
+                '<th>AVG</th>' +
+                '<th>OBP</th>' +
+                '</tr>' +
+                '</thead>';
             break;
         case 'baseballP':
             ret = ret +
+                '<thead>' +
                 '<tr>' +
-                '<td>IP</td>' +
-                '<td>SO</td>' +
-                '<td>W</td>' +
-                '<td>L</td>' +
-                '<td>Save</td>' +
-                '<td>ERA</td>' +
-                '</tr>';
+                '<th>IP</th>' +
+                '<th>SO</th>' +
+                '<th>W</th>' +
+                '<th>L</th>' +
+                '<th>Save</th>' +
+                '<th>ERA</th>' +
+                '</tr>' +
+                '</thead>';
             break;
         case 'footballWR':
             ret = ret +
+                '<thead>' +
                 '<tr>' +
-                '<td>Yards</td>' +
-                '<td>Avg Yards</td>' +
-                '<td>TD</td>' +
-                '</tr>';
+                '<th>Yards</th>' +
+                '<th>Avg Yards</th>' +
+                '<th>TD</th>' +
+                '</tr>' +
+                '</thead>';
             break;
         default:
             return;
