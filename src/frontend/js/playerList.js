@@ -87,8 +87,7 @@ function createTable(player) {
         default:
             $sportDiv = $('#other');
     }
-
-    var tableString = '<p class="favs" id="' + player._id +">" + player.name + '</p>';
+    var tableString = '<p class="favs" id="' + player._id + '">' + player.name + '</p>';
     $sportDiv.append(tableString);
 }
 
@@ -97,28 +96,31 @@ function addLinks() {
     var $basketball = $('#basketball');
     var $football = $('football');
 
-    $baseball.each(function (index) {
+    var $players = $('p');
+
+    $players.each(function (index) {
         $(this).click(function () {
             sessionStorage.playerID = $(this).attr('id');
             location.href = "stats.html";
         });
     });
 
-    $basketball.each(function (index) {
-        $(this).click(function () {
-            sessionStorage.playerID = $(this).attr('id');
-            location.href = "stats.html";
-        });
-    });
-
-    $football.each(function (index) {
-        $(this).click(function () {
-            sessionStorage.playerID = $(this).attr('id');
-            location.href = "stats.html";
-        });
-    });
+    // $basketball.each(function (index) {
+    //     $(this).click(function () {
+    //         sessionStorage.playerID = $(this).attr('id');
+    //         location.href = "stats.html";
+    //     });
+    // });
+    //
+    // $football.each(function (index) {
+    //     $(this).click(function () {
+    //         sessionStorage.playerID = $(this).attr('id');
+    //         location.href = "stats.html";
+    //     });
+    // });
 }
 
 getUser();
 pushFavs();
+addLinks();
 
