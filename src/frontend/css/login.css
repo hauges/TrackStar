@@ -1,8 +1,13 @@
 #login-div {
+    font-family: 'Bungee', cursive;
     margin: auto;
     margin-top: 100px;
     width: 20%;
     padding: 10px;
     text-align: center;
     background-color: #2eb2ff;
+}
+
+h1 {
+    color: white;
 }

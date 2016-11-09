@@ -94,8 +94,16 @@ function createTable(player) {
 function addLinks() {
     var $baseball = $('#baseball');
     var $basketball = $('#basketball');
-    var $football = $('football');
-
+    var $football = $('#football');
+    var expand = $('.expand');
+    expand.each(function () {
+        $(this).click(function (){
+            console.log('in click');
+            $(this).toggleClass("selected");
+            $(this).next().toggleClass("show");
+            // this.nextElementSibling.classList.toggle("show");
+        });
+    });
     var $players = $('p');
 
     $players.each(function (index) {
