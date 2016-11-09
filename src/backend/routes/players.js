@@ -81,6 +81,19 @@ router.route('/id-:id') // gets all data from a player
                 });
             }
         });
+    })
+    .delete(function (req, res, next) {
+        mongoose.model('Player').remove({ '_id': req.params.id }, function (err, players) {
+            if (err) {
+                return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        res.json(players);
+                    }
+                });
+            }
+        });
     });
 
 router.route('/players-:name')
