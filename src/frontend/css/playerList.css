@@ -1,8 +1,37 @@
-#allFavs {
+#baseball {
     margin: auto;
     margin-top: 100px;
 }
 
+#football, #basketball, #baseball{
+    padding: 10px;
+    padding-left: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+
 .favs {
     font-family: 'Bungee', cursive;
+}
+
+#noFavs {
+    margin: auto;
+    padding-top: 200px;
+    vertical-align: center;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    font-size: 40pt;
+    color: #cccccc;
+}
+
+#noFavs a {
+    margin: auto;
+    padding-top: 200px;
+    vertical-align: center;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    font-size: 40pt;
+    color: #2eb2ff;
 }

@@ -21,7 +21,6 @@
             "<div id=\"dropDown-content\">" +
             "<a href=\"home.html\" class=\"hvr-grow\">Home</a>" +
             "<a href=\"playerList.html\" class=\"hvr-grow\">Player List</a>" +
-            "<a href=\"teamList.html\" class=\"hvr-grow\">Team List</a>" +
             "<a href=\"search.html\" class=\"hvr-grow\">Search</a>" +
             "</div>" +
             "</div>" +

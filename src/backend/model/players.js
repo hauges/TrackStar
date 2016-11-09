@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var playerSchema  = new mongoose.Schema({
+    picture: String,
     name: String,
     number: Number,
     team: String,
