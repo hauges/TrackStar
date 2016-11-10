@@ -5,7 +5,7 @@
 "use strict";
 var username = sessionStorage.getItem("userName");
 console.log("session username: " + username);
-var apiUrl = "http://localhost:3000/";
+var apiUrl = 'https://trackstar-backend.herokuapp.com/';
 var searchString = '';
 var $searchResults = $('#searchResults');
 

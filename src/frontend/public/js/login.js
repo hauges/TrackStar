@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var apiUrl = "http://localhost:3000/"
+    var apiUrl = 'https://trackstar-backend.herokuapp.com/';
     var username;
     var password;
 

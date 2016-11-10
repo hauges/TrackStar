@@ -1,6 +1,6 @@
 
     "use strict";
-    var apiUrl = "http://localhost:3000/"
+    var apiUrl = 'https://trackstar-backend.herokuapp.com/';
     var username = sessionStorage.getItem("userName");
     //var username = "user" // this sould not be set here but this is meant for testing
     var user;

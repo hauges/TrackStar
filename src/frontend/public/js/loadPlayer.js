@@ -1,7 +1,7 @@
 
 var playerID = sessionStorage.playerID;
 var username = sessionStorage.getItem("userName");
-var apiUrl = "http://localhost:3000/";
+var apiUrl = 'https://trackstar-backend.herokuapp.com/';
 console.log(playerID);
 createTable(getPlayer(playerID));
 
