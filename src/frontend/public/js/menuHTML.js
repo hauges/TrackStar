@@ -4,7 +4,8 @@
     console.log("session username: " + username);
     function setup() {
         var pageName = window.location.pathname; //
-        var indexOfName = pageName.indexOf("frontend") + 9;
+        var indexOfName = 1;
+        console.log(pageName);
         var indexOfDot = pageName.indexOf(".");
         pageName = pageName.substr(indexOfName, indexOfDot - indexOfName);
         pageName = getPageName(pageName);
