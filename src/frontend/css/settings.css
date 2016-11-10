@@ -1,8 +1,67 @@
-#change-username-div,  #change-password-div, #logout-div{
+#change-username-div,  #change-password-div {
     background: #2eb2ff;
     width: 300px;
     margin: auto;
     margin-top: 100px;
     text-align: center;
-    padding: 10px;
+    font-family: 'Bungee', cursive;
+    border-radius: 25px;
+    padding-bottom: 70px;
+    padding-top: 10px;
+    height: 200px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#logout-div {
+    background: #2eb2ff;
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#logout-div input {
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    padding: 0;
+    margin: 10px;
+}
+
+body {
+    background-image: url("../pictures/light-blue-NR.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#logout, #submit-password, #submit-username {
+    background-color: #888;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Bungee', cursive;
+    border-radius: 25px;
+    outline: none;
+}
+
+#logout:hover {
+    color: white;
+    background-color: #ff5c5c;
+}
+
+#submit-password:hover, #submit-username:hover {
+    color: #888;
+    background-color: white;
 }

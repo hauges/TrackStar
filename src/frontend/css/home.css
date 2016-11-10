@@ -1,3 +1,10 @@
+body {
+    background-image: url("../pictures/light-blue-NR.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 #favorites {
     display: flex;
     flex-direction: row;
@@ -6,6 +13,7 @@
     padding-top: 100px;
     max-width: 1800px;
     margin: auto;
+    border-radius: 25px;
 }
 
 .player-table-short {
@@ -16,29 +24,36 @@
     width: 300px;
     height: 440px;
     margin: 20px;
+    border-radius: 25px;
+    background-color: white;
 }
 
 .player-table-short:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 10px 10px 5px #888888;
 }
 
 .player-table-short img {
     height: 300px;
     width: 100%;
     overflow: hidden;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 
 }
 
 .statTable {
     border-collapse: collapse;
+
 }
 .statTable * td {
     width: 20%;
     border: solid;
     text-align: center;
-    border-color: #2eb2ff;
+    border-color: transparent;
     min-height: 0px;
     height: 60px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .statTable tr {
