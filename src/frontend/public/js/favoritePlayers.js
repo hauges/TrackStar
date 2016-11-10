@@ -100,8 +100,8 @@
             break;
         case 'footballQB':
             ret = '<td>' + '<div class="fields">' + "Yards" + '</div>' + player.stats.statArray[0] +
-                    '<td>' + '<div class="fields">' + "TD" + '</div>' + player.stats.statArray[1] + '</td>' +
-                    '<td>' + '<div class="fields">' + "QBR" + '</div>' + player.stats.statArray[2] + '</td>';
+                    '<td>' + '<div class="fields">' + "TD" + '</div>' + player.stats.statArray[3] + '</td>' +
+                    '<td>' + '<div class="fields">' + "QBR" + '</div>' + player.stats.statArray[4] + '</td>';
             break;
         case 'footballRB':
             ret = '<td>' + '<div class="fields">' + "Yards" + '</div>' + player.stats.statArray[0] +
