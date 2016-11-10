@@ -80,6 +80,23 @@ router.route('/username-:username') // gets all data from a username
                 }
             })
         });
+    })
+    .delete(function (req, res, next) {
+        console.log(req.params.id);
+        mongoose.model('User').remove({ 'username': req.params.username }, function (err, user) {
+            if (err) {
+                return console.log(err); // CONSIDER: Might want to call next with error.  can add status code and error message.
+            } else {
+                res.format({
+                    json: function () {
+                        console.log('removed');
+                        console.log(user);
+                        res.status(204);
+                        res.json(null);
+                    }
+                });
+            }
+        });
     });
 
 // prolly dont need
